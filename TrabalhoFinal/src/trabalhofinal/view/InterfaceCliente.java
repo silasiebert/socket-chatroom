@@ -41,11 +41,11 @@ public class InterfaceCliente extends javax.swing.JFrame {
             }
         });
 
+        taMensagens.setEditable(false);
         taMensagens.setColumns(20);
         taMensagens.setRows(5);
         jScrollPane1.setViewportView(taMensagens);
 
-        edMensagem.setText("jTextField1");
         edMensagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edMensagemActionPerformed(evt);

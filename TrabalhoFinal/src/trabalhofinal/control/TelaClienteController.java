@@ -13,6 +13,7 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import trabalhofinal.Encryptor;
 import trabalhofinal.view.InterfaceCliente;
 
 /**
@@ -51,10 +52,13 @@ public class TelaClienteController {
         int minutos = horaAtual.getMinute();
         int segundos = horaAtual.getSecond();
         String mensagem = horas + ":" + minutos + ":" + segundos + " " + intC.edMensagem.getText();
-        outbound.writeUTF(mensagem);
+        byte[] buffer = mensagem.getBytes();
+        buffer = Encryptor.encrypt(buffer);
+        outbound.write(buffer, 0, buffer.length);
     }
-    public void adicionarMensagemNaTela(String mensagem){
+
+    public void adicionarMensagemNaTela(String mensagem) {
         String textoMostrado = intC.taMensagens.getText();
-        intC.taMensagens.setText(textoMostrado+"\n"+mensagem);
+        intC.taMensagens.setText(textoMostrado + "\n" + mensagem);
     }
 }

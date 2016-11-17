@@ -24,20 +24,23 @@ public class Falante implements Runnable {
         try {
             outbound = new DataOutputStream(this.con.getOutputStream());
             String mensagemNova = "Begin";
-      
-            while (!mensagemNova.equals("parar")) {
-                if (!mensagemNova.equals(buffer.getMensagem())) {
+            byte[] arrayMenasgem = {1, 2, 3};
+            do {
+
+                if (!mensagemNova.equalsIgnoreCase(new String(Encryptor.encrypt(buffer.getArrayMensagem())))) {
+                    outbound.write(buffer.getArrayMensagem(), 0, buffer.getArrayMensagem().length);
+                    arrayMenasgem = buffer.getArrayMensagem();
+
+                    mensagemNova = new String(Encryptor.encrypt(arrayMenasgem));
                     System.out.println(Thread.currentThread().getName() + " mandou de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + mensagemNova);
-                    outbound.writeUTF(buffer.getMensagem());
-                    mensagemNova = buffer.getMensagem();
+
                 }
-                
-            }
+            } while (!mensagemNova.equals("parar"));
             outbound.close();
             this.con.close();
 
         } catch (IOException ex) {
-            Logger.getLogger(Falante.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
     }

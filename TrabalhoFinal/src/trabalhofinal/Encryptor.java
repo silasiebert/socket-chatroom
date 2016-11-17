@@ -5,7 +5,9 @@
  */
 package trabalhofinal;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -13,43 +15,28 @@ import java.util.ArrayList;
  */
 public class Encryptor {
 
-    public static void main(String[] args) {
-//        byte[] mensagemNormal = mensagem.getBytes();
-//        ArrayList<Byte>mensagemEnc  = new ArrayList<Byte>();
-//        
-        System.out.println(Integer.parseInt(Integer.toBinaryString(10)));
-        //byte input
-        String input = Integer.toBinaryString(10);
-        int sad = Integer.parseInt(input);
-        System.out.println("Binario: "+sad);
-        int lenght = input.length();
-        String multiplier = "1111111111";
-        multiplier = multiplier.substring(0, lenght);
-        
-        int mInt = Integer.parseInt(multiplier);
-        //byte resultante
-        int res = sad^mInt;
-        System.out.println("Operacao: "+sad+"^"+mInt+"= "+res);
-        System.out.println(Integer.parseUnsignedInt(String.valueOf(res),2));
-        
-    }
-
-    public void encrypt(String mensagem) {
-        byte[] mensagemNormal = mensagem.getBytes();
-        ArrayList<Byte>mensagemEnc  = new ArrayList<Byte>();
-        
-        System.out.println(Integer.parseInt(Integer.toBinaryString(5)));
-        int sad = Integer.parseInt(Integer.toBinaryString(5));
-        int lenght = Integer.toBinaryString(5).length();
-        String multiplier = "1111111111";
-        multiplier = multiplier.substring(0, lenght);
-        int mInt = Integer.parseInt(multiplier);
-        System.out.println(sad^mInt);
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String msg = "oi tudo";
+//        String nova = encrypt(msg);
+//        System.out.println(msg);
+//        System.out.println(encrypt(nova));
+//        System.out.println(encrypt(nova));
 
     }
 
-    public void decrypt(String mensagem) {
-
+    public static byte[] encrypt(byte[] mensagem) throws UnsupportedEncodingException {
+//        byte[] normal = mensagem.getBytes("UTF-8");
+//        System.out.println(new String(normal));
+        byte[] encriptada = new byte[mensagem.length];
+        for (int i = 0; i < mensagem.length; i++) {
+            encriptada[i] = (byte) ~mensagem[i];
+        }
+//        for (int i = 0; i < encriptada.length; i++) {
+//            encriptada[i] = (byte) ~encriptada[i];
+//        }
+//        System.out.println(new String(encriptada));
+//        return new String(encriptada);
+        return encriptada;
     }
 
 }

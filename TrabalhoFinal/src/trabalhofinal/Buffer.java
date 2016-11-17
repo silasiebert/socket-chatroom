@@ -13,20 +13,29 @@ import java.io.DataOutputStream;
  */
 public class Buffer {
 
-    private String mensagem;
+//    private String mensagem;
+    private byte[] arrayMensagem = {};
 
-    public Buffer() {
-        mensagem = "";
+//    
+//    public Buffer() {
+//        mensagem = "";
+//    }
+//
+//    public String getMensagem() {
+//        System.out.println("Pegou mensagem " + mensagem);
+//        return mensagem;
+//    }
+//
+//    public synchronized void setMensagem(String mensagem) {
+//        System.out.println("Setou mensagem " + mensagem);
+//        this.mensagem = mensagem;
+//    }
+    public byte[] getArrayMensagem() {
+        return arrayMensagem;
     }
 
-    public String getMensagem() {
-        System.out.println("Pegou mensagem " + mensagem);
-        return mensagem;
-    }
-
-    public synchronized void setMensagem(String mensagem) {
-        System.out.println("Setou mensagem " + mensagem);
-        this.mensagem = mensagem;
+    public synchronized void setArrayMensagem(byte[] arrayMensagem) {
+        this.arrayMensagem = arrayMensagem;
     }
 
 }
