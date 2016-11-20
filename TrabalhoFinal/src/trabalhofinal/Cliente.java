@@ -35,7 +35,7 @@ public class Cliente {
                     if (!mesagemRecebida.isEmpty()) {
                         System.out.println("Cliente recebeu mensagem " + mesagemRecebida);
 
-                        tela.adicionarMensagemNaTela(mesagemRecebida + " era " + mensagemEncryptada);
+                        tela.adicionarMensagemNaTela(mesagemRecebida + " ----> " + mensagemEncryptada);
                     }
                 }
             } while (!mesagemRecebida.contains("Adieu!"));

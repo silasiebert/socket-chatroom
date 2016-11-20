@@ -50,8 +50,12 @@ public class TelaClienteController {
         LocalTime horaAtual = LocalTime.now();
         int horas = horaAtual.getHour();
         int minutos = horaAtual.getMinute();
+        String min = String.valueOf(minutos);
+        if (minutos < 10) {
+            min = "0" + minutos;
+        }
         int segundos = horaAtual.getSecond();
-        String mensagem = horas + ":" + minutos + ":" + segundos + " " + intC.edMensagem.getText();
+        String mensagem = horas + ":" + min + ":" + segundos + " " + intC.edMensagem.getText();
         byte[] buffer = mensagem.getBytes();
         buffer = Encryptor.encrypt(buffer);
         outbound.write(buffer, 0, buffer.length);

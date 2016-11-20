@@ -79,6 +79,7 @@ public class InterfaceCliente extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void edMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edMensagemActionPerformed

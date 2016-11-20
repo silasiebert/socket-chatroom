@@ -6,23 +6,12 @@
 package trabalhofinal;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  *
  * @author sila
  */
 public class Encryptor {
-
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        String msg = "oi tudo";
-//        String nova = encrypt(msg);
-//        System.out.println(msg);
-//        System.out.println(encrypt(nova));
-//        System.out.println(encrypt(nova));
-
-    }
 
     public static byte[] encrypt(byte[] mensagem) throws UnsupportedEncodingException {
 //        byte[] normal = mensagem.getBytes("UTF-8");
