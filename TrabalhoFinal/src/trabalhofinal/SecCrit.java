@@ -8,6 +8,7 @@ package trabalhofinal;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -15,22 +16,22 @@ import java.util.ArrayList;
  */
 public class SecCrit {
 
-    private ArrayList<DataOutputStream> outboundArray;
-
+//    private ArrayList<DataOutputStream> outboundArray;;
+    private HashMap<Integer, DataOutputStream>outboundArray;
     public SecCrit() {
-        this.outboundArray = new ArrayList<>();
+        this.outboundArray = new HashMap<>();
     }
 
     public void adicionarOutbound(int posicao, DataOutputStream outboud) {
-        this.outboundArray.add(posicao, outboud);
+        this.outboundArray.put(posicao, outboud);
     }
 
     public void removerOutbond(int index) {
-        this.outboundArray.remove(0);
+        this.outboundArray.remove(index);
     }
 
     public synchronized void enviaMensagem(byte[] mensagemArray) throws IOException {
-        for (DataOutputStream o : this.outboundArray) {
+        for (DataOutputStream o : this.outboundArray.values()) {
             o.write(mensagemArray, 0, mensagemArray.length);
         }
     }

@@ -40,7 +40,10 @@ public class Ouvinte implements Runnable {
                         inbound.close();
                         this.con.close();
                         System.out.println(Thread.currentThread().getName() + " fechou a conexao");
-
+                        String nome = condicao.split("-")[1];
+                        String msg =  nome+" saiu.";
+                        byte[]msgSaida = msg.getBytes();
+                        secCrit.enviaMensagem(Encryptor.encrypt(msgSaida));
                     } else {
 
                         secCrit.enviaMensagem(arrayMensagem);

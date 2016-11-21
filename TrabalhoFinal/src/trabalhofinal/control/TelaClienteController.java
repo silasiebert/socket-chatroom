@@ -10,24 +10,26 @@ import java.awt.event.ActionListener;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.time.LocalTime;
-import javax.swing.Action;
 import trabalhofinal.Encryptor;
 import trabalhofinal.view.InterfaceCliente;
+import trabalhofinal.view.Login;
 
 /**
  *
  * @author sila
  */
 public class TelaClienteController {
-
+    private Login login;
     private InterfaceCliente intC;
     private DataOutputStream outbound;
     private boolean ativa;
-
+    private String nome;
     public TelaClienteController(DataOutputStream out) {
         this.intC = new InterfaceCliente();
+        this.login = new Login(intC, true);
         this.outbound = out;
         inicializarComponentes();
+        login.setVisible(true);
         intC.setVisible(true);
         ativa = true;
     }
@@ -44,7 +46,13 @@ public class TelaClienteController {
                 }
             }
         });
-
+        login.btLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nome = login.edUsername.getText();
+                login.setVisible(false);
+            }
+        });
     }
 
     public void mandarMensagem() throws IOException {
@@ -56,7 +64,7 @@ public class TelaClienteController {
             min = "0" + minutos;
         }
         int segundos = horaAtual.getSecond();
-        String mensagem = horas + ":" + min + ":" + segundos + " - " +" dsfsdfdsdfs"+ " says:"+ intC.edMensagem.getText();
+        String mensagem = horas + ":" + min + ":" + segundos + " -" +nome+ "- says:"+ intC.edMensagem.getText();
         if (mensagem.contains("adieu")) {
             ativa = false;
         }
