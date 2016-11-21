@@ -40,7 +40,7 @@ public class Cliente {
                 }
             } while (tela.isAtiva());
 
-// fecha streams
+            // fecha streams
             inbound.close();
             outbound.close();
             //fecha socket

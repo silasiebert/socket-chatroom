@@ -10,9 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.Action;
 import trabalhofinal.Encryptor;
 import trabalhofinal.view.InterfaceCliente;
 
@@ -46,6 +44,7 @@ public class TelaClienteController {
                 }
             }
         });
+
     }
 
     public void mandarMensagem() throws IOException {
@@ -57,13 +56,14 @@ public class TelaClienteController {
             min = "0" + minutos;
         }
         int segundos = horaAtual.getSecond();
-        String mensagem = horas + ":" + min + ":" + segundos + " " + intC.edMensagem.getText();
-        if (mensagem.contains("Adieu!")) {
+        String mensagem = horas + ":" + min + ":" + segundos + " - " +" dsfsdfdsdfs"+ " says:"+ intC.edMensagem.getText();
+        if (mensagem.contains("adieu")) {
             ativa = false;
         }
         byte[] buffer = mensagem.getBytes();
         buffer = Encryptor.encrypt(buffer);
         outbound.write(buffer, 0, buffer.length);
+        intC.edMensagem.setText("");
     }
 
     public void adicionarMensagemNaTela(String mensagem) {

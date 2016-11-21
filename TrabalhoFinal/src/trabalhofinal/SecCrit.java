@@ -5,6 +5,9 @@
  */
 package trabalhofinal;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,29 +15,24 @@ package trabalhofinal;
  */
 public class SecCrit {
 
-//    private String mensagem;
-    private byte[] arrayMensagem = {};
+    private ArrayList<DataOutputStream> outboundArray;
 
-//    
-//    public SecCrit() {
-//        mensagem = "";
-//    }
-//
-//    public String getMensagem() {
-//        System.out.println("Pegou mensagem " + mensagem);
-//        return mensagem;
-//    }
-//
-//    public synchronized void setMensagem(String mensagem) {
-//        System.out.println("Setou mensagem " + mensagem);
-//        this.mensagem = mensagem;
-//    }
-    public byte[] getArrayMensagem() {
-        return arrayMensagem;
+    public SecCrit() {
+        this.outboundArray = new ArrayList<>();
     }
 
-    public synchronized void setArrayMensagem(byte[] arrayMensagem) {
-        this.arrayMensagem = arrayMensagem;
+    public void adicionarOutbound(int posicao, DataOutputStream outboud) {
+        this.outboundArray.add(posicao, outboud);
+    }
+
+    public void removerOutbond(int index) {
+        this.outboundArray.remove(0);
+    }
+
+    public synchronized void enviaMensagem(byte[] mensagemArray) throws IOException {
+        for (DataOutputStream o : this.outboundArray) {
+            o.write(mensagemArray, 0, mensagemArray.length);
+        }
     }
 
 }

@@ -8,46 +8,47 @@ import trabalhofinal.SecCrit;
 public class Ouvinte implements Runnable {
 
     private Socket con;
-    SecCrit secCrit;
+    private SecCrit secCrit;
+    private int posicao;
 
-    public Ouvinte(Socket conexao, SecCrit b) {
+    public Ouvinte(Socket conexao, SecCrit b, int pos) {
         super();
         this.con = conexao;
         this.secCrit = b;
+        this.posicao = pos;
     }
 
     public void run() {
         try {
             System.out.println("iniciou");
-            // Cria stream de entrada
+
             String condicao = "";
             DataInputStream inbound;
-            // Cria stream de entrada
             inbound = new DataInputStream(this.con.getInputStream());
             byte[] arrayMensagem;
-
+            byte[] arrayMensagemDec;
             do {
                 arrayMensagem = new byte[inbound.available()];
                 for (int i = 0; i < arrayMensagem.length; i++) {
                     arrayMensagem[i] = inbound.readByte();
                 }
-                // ler mensagens recebidas
-                condicao = new String(arrayMensagem);
+                arrayMensagemDec = Encryptor.encrypt(arrayMensagem);
+                condicao = new String(arrayMensagemDec);
                 if (!condicao.isEmpty()) {
-                    
+                    if (condicao.contains("adieu")) {
+                        secCrit.removerOutbond(posicao);
+                        inbound.close();
+                        this.con.close();
+                        System.out.println(Thread.currentThread().getName() + " fechou a conexao");
 
-                    secCrit.setArrayMensagem(arrayMensagem);
-                    System.out.println(Thread.currentThread().getName() + " recebeu de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + condicao);
+                    } else {
 
+                        secCrit.enviaMensagem(arrayMensagem);
+                        System.out.println(Thread.currentThread().getName() + " recebeu de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + condicao);
+                    }
                 }
+            } while (!condicao.contains("adieu"));
 
-            } while (!condicao.equals("tchau"));
-            //fecha stream de entrada
-            inbound.close();
-            //fecha stream de saida
-
-            //fecha conexao com o cliente
-            this.con.close();
         } catch (IOException e) {
             System.out.println(e);
         }
