@@ -38,7 +38,7 @@ public class Cliente {
                         tela.adicionarMensagemNaTela(mesagemRecebida + " ----> " + mensagemEncryptada);
                     }
                 }
-            } while (!mesagemRecebida.contains("Adieu!"));
+            } while (tela.isAtiva());
 
 // fecha streams
             inbound.close();

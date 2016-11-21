@@ -24,12 +24,14 @@ public class TelaClienteController {
 
     private InterfaceCliente intC;
     private DataOutputStream outbound;
+    private boolean ativa;
 
     public TelaClienteController(DataOutputStream out) {
         this.intC = new InterfaceCliente();
         this.outbound = out;
         inicializarComponentes();
         intC.setVisible(true);
+        ativa = true;
     }
 
     public void inicializarComponentes() {
@@ -56,6 +58,9 @@ public class TelaClienteController {
         }
         int segundos = horaAtual.getSecond();
         String mensagem = horas + ":" + min + ":" + segundos + " " + intC.edMensagem.getText();
+        if (mensagem.contains("Adieu!")) {
+            ativa = false;
+        }
         byte[] buffer = mensagem.getBytes();
         buffer = Encryptor.encrypt(buffer);
         outbound.write(buffer, 0, buffer.length);
@@ -65,4 +70,13 @@ public class TelaClienteController {
         String textoMostrado = intC.taMensagens.getText();
         intC.taMensagens.setText(textoMostrado + "\n" + mensagem);
     }
+
+    public boolean isAtiva() {
+        return ativa;
+    }
+
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
+    }
+
 }

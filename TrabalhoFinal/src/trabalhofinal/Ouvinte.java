@@ -1,21 +1,19 @@
 package trabalhofinal;
 
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.ArrayList;
-import trabalhofinal.Buffer;
+import trabalhofinal.SecCrit;
 
 public class Ouvinte implements Runnable {
 
     private Socket con;
-    Buffer buffer;
+    SecCrit secCrit;
 
-    public Ouvinte(Socket conexao, Buffer b) {
+    public Ouvinte(Socket conexao, SecCrit b) {
         super();
         this.con = conexao;
-        this.buffer = b;
+        this.secCrit = b;
     }
 
     public void run() {
@@ -36,8 +34,9 @@ public class Ouvinte implements Runnable {
                 // ler mensagens recebidas
                 condicao = new String(arrayMensagem);
                 if (!condicao.isEmpty()) {
+                    
 
-                    buffer.setArrayMensagem(arrayMensagem);
+                    secCrit.setArrayMensagem(arrayMensagem);
                     System.out.println(Thread.currentThread().getName() + " recebeu de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + condicao);
 
                 }

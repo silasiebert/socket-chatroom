@@ -5,19 +5,18 @@
  */
 package trabalhofinal;
 
-import java.io.DataOutputStream;
 
 /**
  *
  * @author sila
  */
-public class Buffer {
+public class SecCrit {
 
 //    private String mensagem;
     private byte[] arrayMensagem = {};
 
 //    
-//    public Buffer() {
+//    public SecCrit() {
 //        mensagem = "";
 //    }
 //

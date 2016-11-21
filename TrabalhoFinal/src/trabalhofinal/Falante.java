@@ -1,22 +1,19 @@
 package trabalhofinal;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import trabalhofinal.Buffer;
+import trabalhofinal.SecCrit;
 
 public class Falante implements Runnable {
 
     private Socket con;
-    Buffer buffer;
+    SecCrit secCrit;
 
-    public Falante(Socket conexao, Buffer b) {
+    public Falante(Socket conexao, SecCrit b) {
         super();
         this.con = conexao;
-        this.buffer = b;
+        this.secCrit = b;
     }
 
     public void run() {
@@ -27,9 +24,9 @@ public class Falante implements Runnable {
             byte[] arrayMenasgem = {1, 2, 3};
             do {
 
-                if (!mensagemNova.equalsIgnoreCase(new String(Encryptor.encrypt(buffer.getArrayMensagem())))) {
-                    outbound.write(buffer.getArrayMensagem(), 0, buffer.getArrayMensagem().length);
-                    arrayMenasgem = buffer.getArrayMensagem();
+                if (!mensagemNova.equalsIgnoreCase(new String(Encryptor.encrypt(secCrit.getArrayMensagem())))) {
+                    outbound.write(secCrit.getArrayMensagem(), 0, secCrit.getArrayMensagem().length);
+                    arrayMenasgem = secCrit.getArrayMensagem();
 
                     mensagemNova = new String(Encryptor.encrypt(arrayMenasgem));
                     System.out.println(Thread.currentThread().getName() + " mandou de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + mensagemNova);

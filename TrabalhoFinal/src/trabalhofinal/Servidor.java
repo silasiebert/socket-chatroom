@@ -8,7 +8,7 @@ public class Servidor {
 
     public static void main(String[] args) {
         ServerSocket serverSocket;
-        Buffer b = new Buffer();
+        SecCrit b = new SecCrit();
         try {
             Socket clientSocket;
             serverSocket = new ServerSocket(6666);
