@@ -18,7 +18,8 @@ public class Servidor {
                 // declara-se pronto receber conexoes e bloqueia ate recebe-las
                 clientSocket = serverSocket.accept();
                 (new Thread(new Ouvinte(clientSocket, b, numConexao))).start();
-                b.adicionarOutbound(numConexao, new DataOutputStream(clientSocket.getOutputStream()));
+				DataOutputStream outbound = new DataOutputStream(clientSocket.getOutputStream());
+                b.adicionarOutbound(numConexao,outbound );
                 numConexao++;
             }
         } catch (IOException e) {
