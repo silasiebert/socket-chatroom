@@ -45,21 +45,17 @@ O algoritmo de criptografia é caracterizado por inverter valor dos bits da mens
 
 
 \section{Introdução}
-A maioria dos usuários de aplicativos de mensagens instantâneas convencionais na Internet não percebe que suas conversas estão sendo transmitidas em texto claro e são vulneráveis a espionagem durante a transmissão. 
-\subsection{Objetivo}
-
+Aplicativos de mensagens instantâneas tornaram-se populares sendo usados diariamente pelas pessoas. A maioria dos usuários convencionais na Internet não percebe que suas conversas estão sendo transmitidas em texto claro e são vulneráveis a espionagem durante a transmissão.
 O projeto foi intitulado  chat assíncrono criptografado e seu objetivo principal é implementar uma sala de bate-papo com criptografia nas mensagens. Objetivos secundarios foram a pesquisa sobre sockets e experiência prática dos autores no desenvolvimento de uma aplicação bate-papo baseada em Java utilizando conceitos de threads e sockets aprendidos em aula.
-
-\subsection{Problema}
-\subsubsection{Requisitos}
+\subsection{Requisitos}
+Nesta seção, descrevemos alguns dos requisitos gerais
+do nosso aplicativo de sala de bate-papo distribuído.
 \begin{itemize}
 \item a criptografia deve inverter valor dos bits da mensagem.
 \item Devem utilizar uma conexão TCP/IP
 \item não utilizar a classe bufferedreader e bufferedwriter
 \end{itemize}
 
-
-              
 A figura \ref{fig1} representa uma sala de bate-papo.
 \begin{figure}[H]
 	\centering
@@ -69,15 +65,15 @@ A figura \ref{fig1} representa uma sala de bate-papo.
 \end{figure} 
 
 \section{A sua Implementação}
-\subsection{Diagramas}
+\subsection{Visao geral}
 \subsubsection{Diagramas de classe}
 A figura \ref{fig2} representa o diagrama de classe da nossa implementação.
 \begin{figure}[H]
-	\includegraphics[scale=0.4]{img/class.png}    
-	\caption{Class diagram}
-	\centering
-	\label{fig2}
-	\end{figure} 
+\includegraphics[scale=0.4]{img/class.png}    
+\caption{Class diagram}
+\centering
+\label{fig2}
+\end{figure} 
 \subsubsection{Diagramas de atividade}
 A figura \ref{fig3} representa o diagrama de atividade da classe servidor da nossa
 implementação.
@@ -85,9 +81,13 @@ implementação.
 \centering
 \includegraphics[scale=0.4]{img/serverflow.png}    
 \caption{Activity diagram do servidor}
-
-\label{fig3}
 \end{figure}
+\subsection{Cliente}
+A tela do cliente deve ter um campo de texto no qual mensagens são exibidas à medida que chegam, e um campo para o usuário digitar mensagens de saída. Cada mensagem deve ter a hora em que foi enviada,o nome do remetente, a mensagem decriptada e uma versão encriptada de mensagem. Qualquer número de pessoas deve ser capaz de participar.
+
+
+
+
 
 \subsection{Codigo fonte}
 
@@ -108,10 +108,12 @@ implementação.
 
 
 \section{Avaliação da implementação}
+Capacidade e limitacoes da applicacao.
 Durante a implementação algumas dificuldades forma surgindo. A primeira deles sendo como manter todas as mensagens sincronizadas e na ordem em todas as janelas de bate-papo.
 Outra dificuldade identificada foi reenviar as mensagens enviados de um cliente para o servidor, para todos os outros clientes.
 A ultima dificuldade foi implementar a criptografia. Para isto algumas estrategias foram tentadas, nenhuma funcionando ate finalmente trabalhar somente com vetores de bytes.
 \section{Conclusão}
+
 Síntese do que foi dito.\\
 Lista dos resultados atingidos:
 \begin{itemize}

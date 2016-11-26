@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  23 NOV 2016 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  26 NOV 2016 02:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,13 +612,13 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count119
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <img/454.png, id=11, 411.9
@@ -626,50 +626,44 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 File: img/454.png Graphic file (type png)
 
 <use img/454.png>
-Package pdftex.def Info: img/454.png used on input line 66.
+Package pdftex.def Info: img/454.png used on input line 62.
 (pdftex.def)             Requested size: 164.77267pt x 115.30875pt.
  <img/class.png, id=13, 861.2175pt x 407.5225pt>
 File: img/class.png Graphic file (type png)
 
 <use img/class.png>
-Package pdftex.def Info: img/class.png used on input line 76.
+Package pdftex.def Info: img/class.png used on input line 72.
 (pdftex.def)             Requested size: 344.4809pt x 163.0061pt.
- [2 <./img/454.png>]
-<img/serverflow.png, id=19, 286.06876pt x 681.54625pt>
+ <img/serverflow.png, id=14, 286.06876pt x 681.54625pt>
 File: img/serverflow.png Graphic file (type png)
 
 <use img/serverflow.png>
-Package pdftex.def Info: img/serverflow.png used on input line 86.
+Package pdftex.def Info: img/serverflow.png used on input line 82.
 (pdftex.def)             Requested size: 114.42546pt x 272.61366pt.
- (../../TrabalhoFinal/src/trabalhofinal/Servidor.java)
-[3 <./img/class.png (PNG copy)> <./img/serverflow.png (PNG copy)>]
-(../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
-(../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [4]
-Overfull \hbox (5.82191pt too wide) in paragraph at lines 111--114
-[]\OT1/cmr/m/n/12 Durante a im-ple-menta^^Xc~ao al-gu-mas di-fi-cul-dades forma
- surgindo. A primeira
- []
-
-(./artigo.bbl) [5] (./artigo.aux) ) 
+ [2 <./img/454.png> <./img/class.png (PNG copy)>]
+(../../TrabalhoFinal/src/trabalhofinal/Servidor.java) [3 <./img/serverflow.png 
+(PNG copy)>] (../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
+(../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [4] (./artigo.bbl)
+[5] (./artigo.aux) ) 
 Here is how much of TeX's memory you used:
- 5886 strings out of 493029
- 79523 string characters out of 6136235
+ 5888 strings out of 493029
+ 79539 string characters out of 6136235
  261299 words of memory out of 5000000
- 9337 multiletter control sequences out of 15000+600000
+ 9339 multiletter control sequences out of 15000+600000
  9566 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,40p,388b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on artigo.pdf (5 pages, 226517 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt8.pfb>
+Output written on artigo.pdf (5 pages, 226931 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
