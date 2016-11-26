@@ -21,7 +21,7 @@ public class Cliente {
             do {
 
                 if (inbound.available() > 0) {
-                    System.out.println("Cliente start with :" + inbound.available() + " avaible bytes");
+
                     arrayMensagem = new byte[inbound.available()];
                     for (int i = 0; i < arrayMensagem.length; i++) {
 

@@ -16,6 +16,10 @@
 \usepackage{listings}
 \lstset{language=Java,
 	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+	numbers=left,
+	xleftmargin=2em,
+	frame=single,
+	framexleftmargin=2em,
 	showspaces=false,
 	showtabs=false,
 	breaklines=true,
@@ -24,8 +28,7 @@
 	commentstyle=\color{pgreen},
 	keywordstyle=\color{pblue},
 	stringstyle=\color{pred},
-	basicstyle=\tiny\ttfamily,
-	moredelim=[il][\textcolor{pgrey}]{$$},
+	basicstyle=\scriptsize\ttfamily,
 	moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
 }
 \title{Chat assíncrono criptografado utilizando  sockets TCP em Java}
@@ -40,13 +43,13 @@
 
 \begin{abstract}
 Neste artigo, uma aplicação de bate-papo para enviar mensagens  criptografadas é proposta.
-O algoritmo de criptografia é caracterizado por inverter valor dos bits da mensagem. A aplicação é desenvolvida usando a linguagem de programação Java e utilizando sockets TCP. Este artigo resume as etapas de engenharia de software seguidas durante a implementação deste projeto.
+O algoritmo de criptografia é caracterizado por inverter valor dos bits da mensagem. A aplicação é desenvolvida usando a linguagem de programação Java e utilizando sockets TCP. A seguir são resumidas as etapas de engenharia de software seguidas durante a implementação deste projeto.
 \end{abstract}
 
 
 \section{Introdução}
 Aplicativos de mensagens instantâneas tornaram-se populares sendo usados diariamente pelas pessoas. A maioria dos usuários convencionais na Internet não percebe que suas conversas estão sendo transmitidas em texto claro e são vulneráveis a espionagem durante a transmissão.
-O projeto foi intitulado  chat assíncrono criptografado e seu objetivo principal é implementar uma sala de bate-papo com criptografia nas mensagens. Objetivos secundarios foram a pesquisa sobre sockets e experiência prática dos autores no desenvolvimento de uma aplicação bate-papo baseada em Java utilizando conceitos de threads e sockets aprendidos em aula.
+O projeto foi intitulado  chat assíncrono criptografado e seu objetivo principal é implementar uma sala de bate-papo com criptografia nas mensagens. Objetivos secundários foram a pesquisa sobre sockets e experiência prática dos autores no desenvolvimento de uma aplicação bate-papo baseada em Java utilizando conceitos de threads e sockets aprendidos em aula.
 \subsection{Requisitos}
 Nesta seção, descrevemos alguns dos requisitos gerais
 do nosso aplicativo de sala de bate-papo distribuído.
@@ -59,68 +62,93 @@ do nosso aplicativo de sala de bate-papo distribuído.
 A figura \ref{fig1} representa uma sala de bate-papo.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{img/454.png}    
+	\includegraphics[scale=0.4]{img/clienteservidor.JPG}    
 	\caption{Sala de bate-papo}
 	\label{fig1}     
 \end{figure} 
 
 \section{A sua Implementação}
-\subsection{Visao geral}
+\subsection{Visão geral da aplicação}
 \subsubsection{Diagramas de classe}
 A figura \ref{fig2} representa o diagrama de classe da nossa implementação.
 \begin{figure}[H]
 \includegraphics[scale=0.4]{img/class.png}    
-\caption{Class diagram}
+\caption{Diagrama de classes da aplicação}
 \centering
 \label{fig2}
 \end{figure} 
-\subsubsection{Diagramas de atividade}
-A figura \ref{fig3} representa o diagrama de atividade da classe servidor da nossa
-implementação.
+%\subsubsection{Diagramas de atividade}
+%A figura \ref{fig3} representa o diagrama de atividade da classe servidor da nossa
+%implementação.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.4]{img/serverflow.png}    
+%\caption{Activity diagram do servidor}
+%\end{figure}
+%\subsection{Cliente}
+Cada cliente abre uma conexão TCP / IP para o servidor para envio e receber mensagens.
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{img/serverflow.png}    
-\caption{Activity diagram do servidor}
+	\lstinputlisting[firstline=14,lastline=16,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Cliente.java}
+	\caption{Conexão com o servidor}
 \end{figure}
-\subsection{Cliente}
 A tela do cliente deve ter um campo de texto no qual mensagens são exibidas à medida que chegam, e um campo para o usuário digitar mensagens de saída. Cada mensagem deve ter a hora em que foi enviada,o nome do remetente, a mensagem decriptada e uma versão encriptada de mensagem. Qualquer número de pessoas deve ser capaz de participar.
+\begin{figure}[H]
+\lstinputlisting[firstline=21,lastline=41,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Cliente.java}
+\caption{Loop que recebe mensagens do servidor}
+\end{figure}
 
-
-
-
-
-\subsection{Codigo fonte}
 
 \begin{figure}[H]
-\lstinputlisting[firstline=8]{../../TrabalhoFinal/src/trabalhofinal/Servidor.java}
-\caption{Codigo da classe Servidor}
+\lstinputlisting[firstline=77,lastline=80,frame=single]{../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java}
+\caption{Metodo para mostrar a mensagem na tela}
 \end{figure}
 
 \begin{figure}[H]
-\lstinputlisting[firstline=8,lastline=41]{../../TrabalhoFinal/src/trabalhofinal/Cliente.java}
-\caption{Codigo da classe Cliente}
+\lstinputlisting[firstline=58,lastline=75,frame=single]{../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java}
+\caption{Metodo de envio de mensagens}
 \end{figure}
 
+\subsection{Servidor}
+O servidor aceita um cliente com a chamada ao accept,cria uma nova Thread Ouvinte para tratar cada cliente em sua própria Thread, logo adiciona um OutputStream dele e adiciona na lista de DataOutputStreams como podemos observar no código da Figura \ref{fig7}.Uma nova chamada ao accept aceita um novo cliente.
 \begin{figure}[H]
-\lstinputlisting[firstline=16,lastline=23]{../../TrabalhoFinal/src/trabalhofinal/Encryptor.java}
-\caption{Código da classe Encryptor}
+\lstinputlisting[firstline=17,lastline=24,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Servidor.java}
+\caption{Método que recebe as conexões com os clientes}
+\label{fig7}
+\end{figure}
+Agora que vários clientes podem mandar mensagens, gostaríamos que os clientes recebessem as mensagens enviadas pelos outros. Ao invés do servidor simplesmente escrever as mensagens no console, ele deve mandar cada mensagem para todos os clientes conectados.
+\begin{figure}[H]
+	\lstinputlisting[firstline=33,lastline=36,frame=single]{../../TrabalhoFinal/src/trabalhofinal/SecCrit.java}
+	\caption{Método da classe SecCrit que distribui as mensagens para os clientes}
+	\label{fig8}
+\end{figure}
+
+Utilizando a lista de DataOutputStreams quando chegar uma mensagem, percorremos essa lista e mandamos uma mensagem a cada cliente individualmente.
+\begin{figure}[H]
+\lstinputlisting[firstline=30,lastline=53,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Ouvinte.java}
+\caption{Loop da classe Ouvinte que recebe mensagens dos clientes}
+\label{fig10}
+\end{figure}
+
+
+\subsection{Criptografia}
+O algoritmo de criptografia é caracterizado por inverter valor dos bits da mensagem conforme ilustrado na Figura \ref{fig9}.
+\begin{figure}[H]
+\lstinputlisting[firstline=16,lastline=22,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Encryptor.java}
+\caption{Método que realiza a criptografia}
+\label{fig9}
 \end{figure}
 
 
 \section{Avaliação da implementação}
-Capacidade e limitacoes da applicacao.
+Ao lançar o servidor ele fica esperando conexões dos clientes. Quando um cliente se conecta ao servidor, este cria uma nova thread Ouvinte que fica “ouvindo” as mensagens desse cliente. 
+Quando uma threads Ouvinte recebe uma mensagem de um cliente ela chama um método da classe SecCrit, a seção critica compartilhada por todas as threads ouvintes, passando a mensagem por parâmetro. Este método irá mandar a mensagem para todos os clientes percorrendo a lista de Dataoutputstreams.
+Quando um cliente manda uma mensagem contendo a palavra “adieu”(adeus em francês), o cliente é desconectado do servidor fechando a conexão e a thread ouvinte correspondente a este cliente chama o método para retirar o DataOutputSream da seção critica.
 Durante a implementação algumas dificuldades forma surgindo. A primeira deles sendo como manter todas as mensagens sincronizadas e na ordem em todas as janelas de bate-papo.
 Outra dificuldade identificada foi reenviar as mensagens enviados de um cliente para o servidor, para todos os outros clientes.
 A ultima dificuldade foi implementar a criptografia. Para isto algumas estrategias foram tentadas, nenhuma funcionando ate finalmente trabalhar somente com vetores de bytes.
 \section{Conclusão}
 
-Síntese do que foi dito.\\
-Lista dos resultados atingidos:
-\begin{itemize}
-\item resultado 1
-\item resultado 2 e teste de bibliografia \cite{Bulfinch1998}
-\end{itemize}
-Conclusão final e Trabalho Futuro.
+
 
 \bibliographystyle{plain}
 \bibliography{n2library.bib}

@@ -14,7 +14,6 @@ import java.io.UnsupportedEncodingException;
 public class Encryptor {
 
     public static byte[] encrypt(byte[] mensagem) throws UnsupportedEncodingException {
-
         byte[] encriptada = new byte[mensagem.length];
         for (int i = 0; i < mensagem.length; i++) {
             encriptada[i] = (byte) ~mensagem[i];
