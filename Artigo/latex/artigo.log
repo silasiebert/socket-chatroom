@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  26 NOV 2016 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  28 NOV 2016 02:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,40 +636,33 @@ Package pdftex.def Info: img/class.png used on input line 75.
 (pdftex.def)             Requested size: 344.4809pt x 163.0061pt.
  (../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
 [2 <./img/clienteservidor.JPG> <./img/class.png (PNG copy)>]
-(../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
-(../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java)
-(../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java)
-[3] (../../TrabalhoFinal/src/trabalhofinal/Servidor.java
-Overfull \hbox (74.65408pt too wide) in paragraph at lines 21--22
-[][][][][][][][][][]  
- []
+<img/telacliente.png, id=17, 403.5075pt x 331.2375pt>
+File: img/telacliente.png Graphic file (type png)
 
-) (../../TrabalhoFinal/src/trabalhofinal/SecCrit.java) [4]
+<use img/telacliente.png>
+Package pdftex.def Info: img/telacliente.png used on input line 97.
+(pdftex.def)             Requested size: 242.10637pt x 198.74402pt.
+ (../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
+[3 <./img/telacliente.png>]
+(../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java)
+(../../TrabalhoFinal/src/trabalhofinal/control/TelaClienteController.java)
+(../../TrabalhoFinal/src/trabalhofinal/Servidor.java) [4]
+(../../TrabalhoFinal/src/trabalhofinal/SecCrit.java)
 (../../TrabalhoFinal/src/trabalhofinal/Ouvinte.java
-Overfull \hbox (14.60883pt too wide) in paragraph at lines 42--43
-[][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.50871pt too wide) in paragraph at lines 46--47
+Overfull \hbox (9.50871pt too wide) in paragraph at lines 45--46
 [][][][][][][][][][][][][][][][]  
  []
 
-
-Overfull \hbox (14.60883pt too wide) in paragraph at lines 50--51
-[][][][][][][][][][][][][][][][][][] 
- []
-
-) (../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [5] (./artigo.bbl
+) [5] (../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [6] (./artigo.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [6] (./artigo.aux) ) 
+) [7] (./artigo.aux) ) 
 Here is how much of TeX's memory you used:
- 5939 strings out of 493029
- 80660 string characters out of 6136235
- 260373 words of memory out of 5000000
- 9373 multiletter control sequences out of 15000+600000
+ 5937 strings out of 493029
+ 80617 string characters out of 6136235
+ 261373 words of memory out of 5000000
+ 9370 multiletter control sequences out of 15000+600000
  10354 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,40p,389b,1267s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -683,10 +676,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt8.pfb>
-Output written on artigo.pdf (6 pages, 189503 bytes).
+Output written on artigo.pdf (7 pages, 191563 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

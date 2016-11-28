@@ -91,7 +91,14 @@ Cada cliente abre uma conexão TCP / IP para o servidor para envio e receber men
 	\lstinputlisting[firstline=14,lastline=16,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Cliente.java}
 	\caption{Conexão com o servidor}
 \end{figure}
-A tela do cliente deve ter um campo de texto no qual mensagens são exibidas à medida que chegam, e um campo para o usuário digitar mensagens de saída. Cada mensagem deve ter a hora em que foi enviada,o nome do remetente, a mensagem decriptada e uma versão encriptada de mensagem. Qualquer número de pessoas deve ser capaz de participar.
+A tela do cliente deve ter um campo de texto no qual mensagens são exibidas à medida que chegam, e um campo para o usuário digitar mensagens de saída.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{img/telacliente.png}    
+	\caption{Tela do cliente}
+	\label{fig11}     
+\end{figure} 
+Cada mensagem deve ter a hora em que foi enviada,o nome do remetente, a mensagem decriptada e uma versão encriptada de mensagem. Qualquer número de pessoas deve ser capaz de participar.
 \begin{figure}[H]
 \lstinputlisting[firstline=21,lastline=41,frame=single]{../../TrabalhoFinal/src/trabalhofinal/Cliente.java}
 \caption{Loop que recebe mensagens do servidor}

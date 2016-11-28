@@ -26,24 +26,17 @@ public class Cliente {
                     for (int i = 0; i < arrayMensagem.length; i++) {
 
                         arrayMensagem[i] = inbound.readByte();
-                        System.out.println("Byte received");
                     }
-                    // ler mensagens recebidas
                     mensagemEncryptada = new String(arrayMensagem);
                     arrayMensagem = Encryptor.encrypt(arrayMensagem);
                     mesagemRecebida = new String(arrayMensagem);
                     if (!mesagemRecebida.isEmpty()) {
-                        System.out.println("Cliente recebeu mensagem " + mesagemRecebida);
-
                         tela.adicionarMensagemNaTela(mesagemRecebida + " ----> " + mensagemEncryptada);
                     }
                 }
             } while (tela.isAtiva());
-
-            // fecha streams
             inbound.close();
             outbound.close();
-            //fecha socket
             clientSocket.close();
             System.exit(0);
         } catch (IOException e) {
