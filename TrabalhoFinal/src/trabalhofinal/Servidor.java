@@ -15,15 +15,13 @@ public class Servidor {
             Socket clientSocket;
             serverSocket = new ServerSocket(6666);
             while (true) {
-                // declara-se pronto receber conexoes e bloqueia ate recebe-las
                 clientSocket = serverSocket.accept();
                 (new Thread(new Ouvinte(clientSocket, b, numConexao))).start();
-				DataOutputStream outbound = new DataOutputStream(clientSocket.getOutputStream());
-                b.adicionarOutbound(numConexao,outbound );
+                DataOutputStream outbound = new DataOutputStream(clientSocket.getOutputStream());
+                b.adicionarOutbound(numConexao, outbound);
                 numConexao++;
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

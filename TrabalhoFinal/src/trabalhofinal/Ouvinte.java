@@ -39,15 +39,12 @@ public class Ouvinte implements Runnable {
                         secCrit.removerOutbond(posicao);
                         inbound.close();
                         this.con.close();
-                        System.out.println(Thread.currentThread().getName() + " fechou a conexao");
                         String nome = condicao.split("-")[1];
-                        String msg =  nome+" saiu.";
-                        byte[]msgSaida = msg.getBytes();
+                        String msg = nome + " saiu.";
+                        byte[] msgSaida = msg.getBytes();
                         secCrit.enviaMensagem(Encryptor.encrypt(msgSaida));
                     } else {
-
                         secCrit.enviaMensagem(arrayMensagem);
-                        System.out.println(Thread.currentThread().getName() + " recebeu de  " + this.con.getInetAddress() + " no instante " + System.currentTimeMillis() + " : " + condicao);
                     }
                 }
             } while (!condicao.contains("adieu"));
