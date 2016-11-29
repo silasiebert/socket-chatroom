@@ -1,3 +1,11 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{Alechina2012}
+Natasha Alechina, Mehdi Dastani, and Brian Logan.
+\newblock Programming norm-aware agents.
+\newblock In Vincent Conitzer, Michael Winikoff, Lin Padgham, and Wiebe van~der
+  Hoek, editors, {\em Proceedings of the 11th International Conference on
+  Autonomous Agents and Multiagent Systems ({AAMAS} 2012)}, Valencia, Spain,
+  June 2012.
 
 \end{thebibliography}

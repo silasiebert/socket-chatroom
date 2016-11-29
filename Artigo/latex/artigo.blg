@@ -2,47 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: artigo.aux
 The style file: plain.bst
-I found no \citation commands---while reading file artigo.aux
 Database file #1: n2library.bib.bib
-You've used 0 entries,
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            497 strings with 3998 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            505 strings with 4304 characters,
+and the built_in function-call counts, 396 in all, are:
+= -- 29
+> -- 32
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 11
+- -- 10
+* -- 33
+:= -- 78
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 1
+duplicate$ -- 14
+empty$ -- 28
+format.name$ -- 10
+if$ -- 77
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 4
+pop$ -- 10
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 5
 quote$ -- 0
-skip$ -- 1
+skip$ -- 5
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 5
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 4
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 3
+width$ -- 2
+write$ -- 13

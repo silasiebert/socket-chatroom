@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  28 NOV 2016 02:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.1)  29 NOV 2016 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,25 +622,25 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<img/clienteservidor.JPG, id=11, 450.18187pt x 314.67563pt>
-File: img/clienteservidor.JPG Graphic file (type jpg)
+<img/objectdiagram.png, id=11, 648.4225pt x 353.32pt>
+File: img/objectdiagram.png Graphic file (type png)
 
-<use img/clienteservidor.JPG>
-Package pdftex.def Info: img/clienteservidor.JPG used on input line 65.
-(pdftex.def)             Requested size: 180.06955pt x 125.86801pt.
+<use img/objectdiagram.png>
+Package pdftex.def Info: img/objectdiagram.png used on input line 70.
+(pdftex.def)             Requested size: 259.3644pt x 141.32549pt.
  <img/class.png, id=12, 861.2175pt x 407.5225pt>
 File: img/class.png Graphic file (type png)
 
 <use img/class.png>
-Package pdftex.def Info: img/class.png used on input line 75.
-(pdftex.def)             Requested size: 344.4809pt x 163.0061pt.
+Package pdftex.def Info: img/class.png used on input line 78.
+(pdftex.def)             Requested size: 258.36723pt x 122.25769pt.
  (../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
-[2 <./img/clienteservidor.JPG> <./img/class.png (PNG copy)>]
+[2 <./img/objectdiagram.png (PNG copy)> <./img/class.png (PNG copy)>]
 <img/telacliente.png, id=17, 403.5075pt x 331.2375pt>
 File: img/telacliente.png Graphic file (type png)
 
 <use img/telacliente.png>
-Package pdftex.def Info: img/telacliente.png used on input line 97.
+Package pdftex.def Info: img/telacliente.png used on input line 101.
 (pdftex.def)             Requested size: 242.10637pt x 198.74402pt.
  (../../TrabalhoFinal/src/trabalhofinal/Cliente.java)
 [3 <./img/telacliente.png>]
@@ -653,30 +653,27 @@ Overfull \hbox (9.50871pt too wide) in paragraph at lines 45--46
 [][][][][][][][][][][][][][][][]  
  []
 
-) [5] (../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [6] (./artigo.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [7] (./artigo.aux) ) 
+) [5] (../../TrabalhoFinal/src/trabalhofinal/Encryptor.java) [6] [7]
+(./artigo.aux) ) 
 Here is how much of TeX's memory you used:
- 5937 strings out of 493029
- 80617 string characters out of 6136235
- 261373 words of memory out of 5000000
- 9370 multiletter control sequences out of 15000+600000
+ 5932 strings out of 493029
+ 80584 string characters out of 6136235
+ 257373 words of memory out of 5000000
+ 9369 multiletter control sequences out of 15000+600000
  10354 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,40p,389b,1267s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb>
-Output written on artigo.pdf (7 pages, 191563 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmtt8.pfb>
+Output written on artigo.pdf (7 pages, 186226 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
