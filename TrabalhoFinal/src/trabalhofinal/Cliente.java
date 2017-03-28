@@ -11,7 +11,7 @@ public class Cliente {
     public static void main(String[] args) {
 
         try {
-            Socket clientSocket = new Socket("127.0.0.1", 6666);
+            Socket clientSocket = new Socket("10.60.30.86", 6669);
             DataInputStream inbound = new DataInputStream(clientSocket.getInputStream());
             DataOutputStream outbound = new DataOutputStream(clientSocket.getOutputStream());
             TelaClienteController tela = new TelaClienteController(outbound);
@@ -31,7 +31,7 @@ public class Cliente {
                     arrayMensagem = Encryptor.encrypt(arrayMensagem);
                     mesagemRecebida = new String(arrayMensagem);
                     if (!mesagemRecebida.isEmpty()) {
-                        tela.adicionarMensagemNaTela(mesagemRecebida + " ----> " + mensagemEncryptada);
+                        tela.adicionarMensagemNaTela(mesagemRecebida);
                     }
                 }
             } while (tela.isAtiva());
